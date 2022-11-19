@@ -4,8 +4,8 @@ import pickle
 
 app = Flask(__name__)
 
-data=pd.read_csv('G:\MINOR-main\MINOR-main\location.csv')
-pipe=pickle.load(open('G:\MINOR-main\MINOR-main\\Nofeature.pkl','rb'))
+data=pd.read_csv('location.csv')
+pipe=pickle.load(open('Nofeature.pkl','rb'))
 # global city
 
 @app.route('/')
