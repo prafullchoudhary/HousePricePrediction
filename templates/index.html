@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="static/img/favicon.png" type="static/image/png">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="static/css/styles.css">
+        
+
+        <title>House Price Prediction</title>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">Sales</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#discover" class="nav__link">Discover</a>
+                        </li>
+                        
+                    </ul>
+
+                    <div class="nav__dark">
+                        <!-- Theme change button -->
+                        <span class="change-theme-name">Dark mode</span>
+                        <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    </div>
+
+                    <i class="ri-close-line nav__close" id="nav-close"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-function-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home" id="home">
+                <img src="static/img/home1.jpg" alt="" class="home__img">
+
+                <div class="home__container container grid">
+                    <div class="home__data">
+                        <span class="home__data-subtitle">Discover your place</span>
+                        <h1 class="home__data-title">Explore The <br> Best <b>Houses <br> By your choice</b></h1>
+                        <a href="#discover" class="button">Explore</a>
+
+                    </div>
+
+                    
+                    <div class="home__info">
+                        <div>
+                            <span class="home__info-title">5 best places</span>
+                            <a href="#discover" class="button button--flex button--link home__info-button">
+                                More <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+
+                        <div class="home__info-overlay">
+                            <img src="static/img/home1.webp" alt="" class="home__info-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title about__title">More Information <br> About The Best Houses</h2>
+                        <p class="about__description">You can find the most beautiful and pleasant Houses at the best 
+                            prices with special discounts, you choose the place we will guide you all the way to wait, get your 
+                            place now.
+                        </p>
+                        <a href="#discover" class="button">Predict a Price</a>
+                    </div>
+
+                    <div class="about__img">
+                        <div class="about__img-overlay">
+                            <img src="static/img/home2.webp" alt="" class="about__img-one">
+                        </div>
+
+                        <div class="about__img-overlay">
+                            <img src="static/img/home3.jpg" alt="" class="about__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+           
+              <!--==================== VIDEO ====================-->
+              <section class="video section" id="Discover">
+                <h2 class="section__title"><u>Welcome to House Price Predictor</u> </h2>
+
+                <div class="video__container container">
+                    
+                      
+                      
+                    <div class="video__content">
+                        <section id="search-section" class="my-5">
+                        <form method="post" accept-charset="utf-8">
+                            <div class="container">
+                            <div class="col-md-11 mx-auto search-area shadow">
+                       
+                    
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="card mt-50" style="width: 100%; height: 100%">
+                                        
+                                        <div class="card-body">
+                                            <div class="col-12" style="text-align: center">
+                                                <h5>This app predicts the price of a House you want to sell or Buy. Try filling the details below: </h5>
+                                            </div>
+                                            <br>
+                                            <form method="post" accept-charset="utf-8" name="Modelform">
+                                                <div class="col-md-10 form-group" style="text-align: center">
+                                                    <label><b>Select the city:</b> </label><br>
+                                                    <select class="selectpicker form-control" id="City" name="City" placeholder="Select the City" method="post">
+                                                            <option>Delhi</option>
+                                                            <option>Hyderabad</option>
+                                                            <option>Bengaluru</option>
+                                                            <option>Chennai</option>
+                                                            <option>Mumbai</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-10 form-group" style="text-align: center" >
+                                                    <label><b>Select the location:</b> </label><br>
+                                                    <select class="selectpicker form-control" id="locations" name="location" required="1" placeholder="Select the Location>
+                                                        {% for location in locations %}
+                                                        <option value="{{location}}">{{location}}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-10 form-group" style="text-align: center">
+                                                    <label><b>Select the No. Of Bedrooms</b> </label><br>
+                                                    <select class="selectpicker form-control" id="Bedrooms" name="Bedrooms" required="1" placeholder="Select the No. Of Bedrooms">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-10 form-group" style="text-align: center">
+                                                    <label><b>Re-sale:</b> </label><br>
+                                                    <select class="selectpicker form-control" id="Re-sale" name="Re-sale" required="1">
+                                                        <option>Yes</option>
+                                                        <option>No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-10 form-group" style="text-align: center">
+                                                    <label><b>Enter the Area:</b> </label><br>
+                                                    <input type="text" class="form-control" id="Area" name="Area"
+                                                           placeholder="Enter the Area(in sqft)" required="1">
+                                                </div>
+                                                <div class="col-md-10 form-group" style="text-align: center">
+                                                    <button  class="btne btne-theme1-2 form-control" onclick="send_data()">Predict Price</button>
+                                                </div>
+                                            </form>
+                                            <br>
+                                            <br>
+                                            <div class="row">
+                                                
+                                                <div class="col-12" style="text-align: center">
+                                                    <h4><span id="prediction"></span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </section>
+                        <video id="video-file">
+                          
+                        </video>
+                      
+                        <button class="button button--flex video__button" id="video-button">
+                            
+                        </button>
+                    </div>
+                </div>
+            </section>
+          
+
+            <!--==================== EXPERIENCE ====================-->
+            <section class="experience section">
+                <h2 class="section__title">With Our Experience <br> We Will Serve You</h2>
+
+                <div class="experience__container container grid">
+                    <div class="experience__content grid">
+                        <div class="experience__data">
+                            <h2 class="experience__number">20</h2>
+                            <span class="experience__description">Year <br> Experience</span>
+                        </div>
+                        <div class="experience__data">
+                            <h2 class="experience__number">250</h2>
+                            <span class="experience__description">In 5 places <br> 250+ Area</span>
+                        </div>
+                      
+
+                        <div class="experience__data">
+                            <h2 class="experience__number">650+</h2>
+                            <span class="experience__description">Happy <br> Customers</span>
+                        </div>
+                    </div>
+
+                    <div class="experience__img grid">
+                        <div class="experience__overlay">
+                            <img src="static/img/home1.webp" alt="" class="experience__img-one">
+                        </div>
+                        
+                        <div class="experience__overlay">
+                            <img src="static/img/home2.webp" alt="" class="experience__img-two">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+          
+         
+
+            <!--==================== SUBSCRIBE ====================-->
+            <section class="subscribe section">
+                <div class="subscribe__bg">
+                    <div class="subscribe__container container">
+                        <h2 class="section__title subscribe__title">Subscribe Our <br> Newsletter</h2>
+                        <p class="subscribe__description">Subscribe to our newsletter and get a 
+                            special 30% discount.
+                        </p>
+    
+                        <form action="" class="subscribe__form">
+                            <input type="text" placeholder="Enter email" class="subscribe__input">
+    
+                            <button class="button">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            
+          
+
+        <!--==================== FOOTER ====================-->
+        
+
+                <div class="footer__rights">
+                    <p class="footer__copy">&#169; 2022 House Price Prediction. Project By Princika and Prafull.</p>
+                    <div class="footer__terms">
+                        <a href="#" class="footer__terms-link">Terms & Agreements</a>
+                        <a href="#" class="footer__terms-link">Privacy Policy</a>
+                        <a href="#" class="footer__terms-link"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+         <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line scrollup__icon"></i>
+        </a>
+        <script>
+
+            function form_handler(event) {
+                   event.preventDefault(); // Don't submit the form normally
+            }
+            function send_data(){
+                document.querySelector('form').addEventListener("submit",form_handler);
+                var fd=new FormData(document.querySelector('form'));
+                var xhr= new XMLHttpRequest({mozSystem: true});
+                xhr.open('POST','/predict',true);
+                document.getElementById('prediction').innerHTML="Wait! Predicting Price.....";
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == XMLHttpRequest.DONE){
+                        document.getElementById('prediction').innerHTML="Prediction: ₹"+xhr.responseText;
+                    }
+                };
+                xhr.onload= function(){};
+
+                 xhr.send(fd);
+
+            }  
+       
+        
+            
+        </script>
+
+        <!--=============== SCROLL REVEAL===============-->
+        <script src="static/js/scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="static/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="static/js/main.js"></script>
+    </body>
+</html>
