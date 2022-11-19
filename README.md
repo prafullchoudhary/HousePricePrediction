@@ -1,5 +1,5 @@
 # HousePricePrediction
-### Boston House Pricing Prediction
+### 5 metropolitan cities House Price Prediction
 
 ### Software And Tools Requirements
 
