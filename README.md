@@ -1,52 +1,43 @@
-# HousePricePrediction
-### 5 metropolitan cities House Price Prediction
-
-### Software And Tools Requirements
-
-1. [Github Account](https://github.com)
-2. [RenderAccount](https://render.com)
-3. [VSCodeIDE](https://code.visualstudio.com/)
-4. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
-
-Create a new environment
-
-```
-conda create -p venv python==3.7 -y
-
-```
-
 # House Price Prediction
 
-Predict the price of a house based on various features such as area, location, number of bedrooms, and whether it is a resale or a new property.
+Welcome to the House Price Prediction project! This project allows you to predict the price of a house based on various features such as the area, location, number of bedrooms, and whether it is a resale or a new property. This project aims to predict the price of houses in major metropolitan cities of India (Chennai, Mumbai, Delhi, Bangalore, Hyderabad) with an accuracy of 80% using a machine learning model. The model used is a random forest regressor.
 
-## Installation
+## Deployment 
+[housepriceprediction-z1t6.onrender.com/](https://housepriceprediction-z1t6.onrender.com/)
+You can visit this to see the deployment.
 
-To install the necessary dependencies, run the following command:
 
-```
-pip install -r requirements.txt
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-```
-
-Copy code
+## Requirements
+- Python 3.7 or above
+- pandas
+- scikit-learn
+- Flask
 
 ## Usage
 
-To use the application, run the following command:
+1. Clone the repository
+
+```
+git clone https://github.com/prafullchoudhary/HousePricePrediction.git
+```
+
+2. Install the required packages
+
+```
+pip install -r requirements.txt
+```
+
+3. Run the app
 
 ```
 python app.py
-
 ```
 
+4. Go to http://127.0.0.1:5001/ in your web browser to use the app
 
-Copy code
-
-Then open a web browser and go to `http://localhost:5001` to access the application.
-
-## Data
-
-The data for this project was obtained from [Kaggle](https://www.kaggle.com/).
 
 ## Model
 
@@ -60,3 +51,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
 
+## Acknowledgments
+
+- [scikit-learn](https://scikit-learn.org/) for the machine learning model
+- [Flask](https://flask.palletsprojects.com/) for the web application framework
+- [Kaggle](https://www.kaggle.com/datasets/ruchi798/housing-prices-in-metropolitan-areas-of-india) for providing the data.
