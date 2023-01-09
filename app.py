@@ -1,24 +1,33 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, jsonify
 import pandas as pd
 import pickle
 
 app = Flask(__name__)
 
-data=pd.read_csv('location.csv')
+df=pd.read_csv('location.csv')
 pipe=pickle.load(open('Nofeature.pkl','rb'))
-# global city
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
+
 def index():
-    locations=data['Location'].unique()
-    # locations=data[data['City']==city]['Location'].unique()
-    return render_template('index.html',locations=locations)
+    if request.method == 'POST':
+        # Get the selected city from the form
+        city = request.form['city']
+        # Get a list of locations for the selected city
+        locations = df[df['City'] == city]['Location'].tolist()
+        # Return the locations as a JSON response
+        return jsonify(locations)
+    else:
+        # Get a list of all the cities
+        cities = df['City'].unique().tolist()
+        locations = []
+        return render_template('index.html', cities=cities, locations=locations)
+
 
 @app.route('/predict',methods=['POST'])
 def predict():
     location=request.form.get('location')
     area=float(request.form.get('Area'))
-    city=request.form.get('City')
     Bedrooms=int(request.form.get('Bedrooms'))
     Resale=request.form.get('Re-sale')
     if Resale=='Yes':
