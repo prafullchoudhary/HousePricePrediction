@@ -4,7 +4,7 @@
 ### Software And Tools Requirements
 
 1. [Github Account](https://github.com)
-2. [HerokuAccount](https://heroku.com)
+2. [RenderAccount](https://render.com)
 3. [VSCodeIDE](https://code.visualstudio.com/)
 4. [GitCLI](https://git-scm.com/book/en/v2/Getting-Started-The-Command-Line)
 
@@ -23,7 +23,10 @@ Predict the price of a house based on various features such as area, location, n
 
 To install the necessary dependencies, run the following command:
 
+```
 pip install -r requirements.txt
+
+```
 
 Copy code
 
@@ -31,7 +34,11 @@ Copy code
 
 To use the application, run the following command:
 
+```
 python app.py
+
+```
+
 
 Copy code
 
@@ -43,7 +50,7 @@ The data for this project was obtained from [Kaggle](https://www.kaggle.com/).
 
 ## Model
 
-The model used for prediction is a linear regression model trained using the scikit-learn library.
+The model used for prediction is a Random forest regression model trained using the scikit-learn library.
 
 ## Contributing
 
@@ -51,10 +58,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
