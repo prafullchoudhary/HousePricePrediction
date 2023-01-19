@@ -21,7 +21,7 @@
     <body class="dark-theme">
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="#" class="nav__logo">Sales</a>
+                <a href="#" class="nav__logo"></a>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
@@ -29,12 +29,11 @@
                             <a href="#home" class="nav__link active-link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#about" class="nav__link">About</a>
+                            <a href="#about" class="nav__link">Discover</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#discover" class="nav__link">Discover</a>
+                            <a href="#Submit" class="nav__link">About</a>
                         </li>
-                        
                     </ul>
 
                     <div class="nav__dark">
@@ -61,16 +60,16 @@
                     <div class="home__data">
                         <span class="home__data-subtitle">Discover your place</span>
                         <h1 class="home__data-title">Explore The <br> Best <b>Houses <br> By your choice</b></h1>
-                        <a href="#Discover" class="button">Explore</a>
+                        <a href="#about" class="button">Explore</a>
 
                     </div>
 
                     
                     <div class="home__info">
                         <div>
-                            <span class="home__info-title">5 best places</span>
+                            <span class="home__info-title">Best House</span>
                             <a href="#Discover" class="button button--flex button--link home__info-button">
-                                More <i class="ri-arrow-right-line"></i>
+                                Predict <i class="ri-arrow-right-line"></i>
                             </a>
                         </div>
 
@@ -85,10 +84,11 @@
             <section class="about section" id="about">
                 <div class="about__container container grid">
                     <div class="about__data">
-                        <h2 class="section__title about__title">More Information <br> About The Best Houses</h2>
-                        <p class="about__description">You can find the most beautiful and pleasant Houses at the best 
-                            prices with special discounts, you choose the place we will guide you all the way to wait, get your 
-                            place now.
+                        <h2 class="section__title about__title">More Information <br> About This App</h2>
+                        <p class="about__description">This House Price Prediction app is a machine learning tool 
+                            that allows users to predict the price of a house in 5 major metropolitan cities in 
+                            India (Delhi, Mumbai, Bangalore, Hyderabad, Chennai).It uses features like location, 
+                            area, number of bedrooms,and whether it's a new or resale property.
                         </p>
                         <a href="#Discover" class="button">Predict Price</a>
                     </div>
@@ -108,7 +108,7 @@
            
               <!--==================== VIDEO ====================-->
               <section class="video section" id="Discover">
-                <h2 class="section__title"><u>Welcome to House Price Predictor</u> </h2>
+                <h2 class="section__title" style="margin-bottom: 5px;"><u>Welcome to House Price Predictor</u></h2>
 
                 <div class="video__container container">
                     
@@ -128,7 +128,7 @@
                                         
                                         <div class="card-body">
                                             <div class="col-12" style="text-align: center">
-                                                <h5>This app predicts the price of a House you want to sell or Buy. Try filling the details below: </h5>
+                                                <h5>This app predicts the price of a House you want to sell or Buy. Try filling the details below. </h5>
                                             </div>
                                             <br>
                                             <form method="post" accept-charset="utf-8" name="Modelform" action="{{ url_for('index') }}">
@@ -209,27 +209,8 @@
           
 
             <!--==================== EXPERIENCE ====================-->
-            <section class="experience section">
-                <h2 class="section__title">With Our Experience <br> We Will Serve You</h2>
-
+            <section class="experience section" style="margin-top: -100px;">
                 <div class="experience__container container grid">
-                    <div class="experience__content grid">
-                        <div class="experience__data">
-                            <h2 class="experience__number">20</h2>
-                            <span class="experience__description">Year <br> Experience</span>
-                        </div>
-                        <div class="experience__data">
-                            <h2 class="experience__number">250</h2>
-                            <span class="experience__description">In 5 places <br> 250+ Area</span>
-                        </div>
-                      
-
-                        <div class="experience__data">
-                            <h2 class="experience__number">650+</h2>
-                            <span class="experience__description">Happy <br> Customers</span>
-                        </div>
-                    </div>
-
                     <div class="experience__img grid">
                         <div class="experience__overlay">
                             <img src="static/img/home1.webp" alt="" class="experience__img-one">
@@ -242,26 +223,24 @@
                 </div>
             </section>
 
-
-          
+                      
          
 
             <!--==================== SUBSCRIBE ====================-->
-            <section class="subscribe section">
+            <section class="subscribe section" id="Submit">
                 <div class="subscribe__bg">
                     <div class="subscribe__container container">
-                        <h2 class="section__title subscribe__title">Subscribe Our <br> Newsletter</h2>
-                        <p class="subscribe__description">Subscribe to our newsletter and get a 
-                            special 30% discount.
+                        <h2 class="section__title subscribe__title"><u>Contact Us</u></h2>
+                        <p class="subscribe__description">Please Give Your Feedback For This App So That We Can Improve It.
                         </p>
-    
-                        <form action="" class="subscribe__form">
-                            <input type="text" placeholder="Enter email" class="subscribe__input">
-    
-                            <button class="button">
-                                Subscribe
-                            </button>
-                        </form>
+                        <div style="text-align: center;">
+                            <a href="https://forms.gle/Dav73iweGaKT68Bc9" class="button">Submit Feedback or Query Here</a>
+                        </div>
+                        <br> <br> 
+                        <a onclick="showText()" style="cursor: pointer;">
+                            <h2 class="section__title subscribe__title"><u>About Us</u></h2>
+                        </a>                        
+                        <p id="text" style="display: none; text-align: center;"></p>
                     </div>
                 </div>
             </section>
@@ -273,12 +252,7 @@
         
 
                 <div class="footer__rights">
-                    <p class="footer__copy">&#169; 2022 House Price Prediction a end-to-end ML project. Front-end designed by Princika and Back-end by Prafull.</p>
-                    <div class="footer__terms">
-                        <a href="#" class="footer__terms-link">Terms & Agreements</a>
-                        <a href="#" class="footer__terms-link">Privacy Policy</a>
-                        <a href="#" class="footer__terms-link"></a>
-                    </div>
+                    <p class="footer__copy">&#169; 2022 House Price Prediction</p>
                 </div>
             </div>
         </footer>
@@ -310,6 +284,12 @@
 
             }  
 
+            function showText() {
+                document.getElementById("text").innerHTML = "This is an end-to-end ML project. Front-end designed by Princika and Back-end by Prafull.";
+                document.getElementById("text").style.display = "block";
+            }
+
+
             function updateLocations() {
                 // Get the selected city
                 var city = document.getElementById("city").value;
@@ -337,6 +317,7 @@
 
 
         </script>
+        
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6236868550848062" crossorigin="anonymous"></script>
     
         <!--=============== SCROLL REVEAL===============-->
