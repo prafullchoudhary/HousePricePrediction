@@ -179,6 +179,40 @@
                                                 </div>
                                                 <br>
                                                 <div class="col-md-10 form-group" style="text-align: center">
+                                                    <input type="checkbox" id="checkbox-id" name="check_Features" disabled>
+                                                    <label for="checkbox-id">Choose Other Features</label>
+                                                </div>
+                                                <br>
+                                                <div id="sub-checkboxes" style="display: none;text-align: center">
+                                                    <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                    <label for="checkbox1">Power Backup</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="checkbox" id="checkbox2" name="checkbox2">
+                                                    <label for="checkbox2">24X7 Security</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="checkbox" id="checkbox3" name="checkbox3">
+                                                    <label for="checkbox3">Car Parking</label>
+                                                    <br><br>
+                                                    <input type="checkbox" id="checkbox4" name="checkbox4">
+                                                    <label for="checkbox4">Gas Connection</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="checkbox" id="checkbox5" name="checkbox5">
+                                                    <label for="checkbox5">Club House</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="checkbox" id="checkbox6" name="checkbox6">
+                                                    <label for="checkbox6">Swimming Pool</label>
+                                                    <br><br>
+                                                    <input type="checkbox" id="checkbox7" name="checkbox7">
+                                                    <label for="checkbox4">Gymnasium</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="checkbox" id="checkbox8" name="checkbox8">
+                                                    <label for="checkbox5">Rain Water Harvesting</label>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="checkbox" id="checkbox9" name="checkbox9">
+                                                    <label for="checkbox6">Sports Facility</label>
+                                                </div>
+                                                <br>  
+                                                <div class="col-md-10 form-group" style="text-align: center">
                                                     <button  class="btne btne-theme1-2 form-control" onclick="send_data()">Predict Price</button>
                                                 </div>
                                             </form>
@@ -314,10 +348,37 @@
                 xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhttp.send("city=" + city);
             }
-
-
         </script>
         
+        <script>
+            const selectPicker = document.getElementById("locations");
+            const checkbox = document.getElementById("checkbox-id");
+          
+            selectPicker.addEventListener("change", function() {
+                const pythonList = JSON.parse('{{ pythonList|tojson|safe }}');
+                const selectedItem = selectPicker.value;
+            
+                if (pythonList.includes(selectedItem)) {
+                    checkbox.disabled = false;
+                } else {
+                    checkbox.disabled = true;
+                }
+            });
+        </script>
+
+        <script>
+            const mainCheckbox = document.getElementById("checkbox-id");
+            const subCheckboxes = document.getElementById("sub-checkboxes");
+        
+            mainCheckbox.addEventListener("change", function() {
+                if (this.checked) {
+                    subCheckboxes.style.display = "block";
+                } else {
+                    subCheckboxes.style.display = "none";
+                }
+            });
+        </script>        
+
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6236868550848062" crossorigin="anonymous"></script>
     
         <!--=============== SCROLL REVEAL===============-->
